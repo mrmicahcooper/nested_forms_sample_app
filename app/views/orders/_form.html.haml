@@ -1,0 +1,29 @@
+-#main form
+= form_for order do |form|
+  %dl.order
+    %dt= form.label :vendor
+    %dd= form.select :vendor, VENDOR
+
+    %dt= form.label :reference
+    %dd= form.text_field :reference
+
+    %dt= form.label :ordered_at
+    %dd= form.date_select :ordered_at
+
+  %dl.items
+    - #nested fields start here
+    = form.fields_for :items, items do |item|
+      %dt= item.label :product
+      %dd= item.select :product, PRODUCT
+
+      %dt= item.label :quantity
+      %dd= item.text_field :quantity
+
+      %dt= item.label :price
+      %dd= item.text_field :price
+
+  %div#add_item
+    = link_to 'Add item', '#'
+
+  %div#actions
+    = form.submit 'Create New Order'

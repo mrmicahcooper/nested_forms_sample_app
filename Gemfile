@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'decent_exposure'
+gem 'haml-rails'
+gem 'jquery-rails'
 gem 'pg'
 gem 'pry'
-gem 'jquery-rails'
+gem 'rails', '3.2.2'
 gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

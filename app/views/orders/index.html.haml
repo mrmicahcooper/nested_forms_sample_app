@@ -1,0 +1,6 @@
+%h1 Orders
+= link_to "New order", new_order_path
+%ul
+  - orders.each do |order|
+    %li
+      = link_to order_label(order), edit_order_path(order)
