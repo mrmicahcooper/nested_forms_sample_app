@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: business_development
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: business_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: business_production
