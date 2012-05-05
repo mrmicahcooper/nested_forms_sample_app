@@ -1,0 +1,12 @@
+%script#item(type='text/selleck_template')
+  %li
+    %label(for="order_items_attributes_{{timestamp}}_product")
+    %select(id="order_items_attributes_{{timestamp}}_product" name="order[items_attributes][{{timestamp}}][product]")
+      - PRODUCT.each do |product|
+        %option= product
+  %li
+    %label(for="order_items_attributes_{{timestamp}}_quantity") Quantity
+    %input(id="order_items_attributes_{{timestamp}}_quantity" name="order[items_attributes][{{timestamp}}][quantity]" type="text")
+  %li
+    %label(for="order_items_attributes_{{timestamp}}_quantity")
+    %input(id="order_items_attributes_{{timestamp}}_quantity" name="order[items_attributes][{{timestamp}}][quantity]" type="text")
