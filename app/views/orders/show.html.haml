@@ -1,3 +1,4 @@
+
 -#app/views/orders/show.html.haml
 
 %h1= order_label(order)
@@ -13,4 +14,3 @@
       %td= order.product || 0
       %td= order.quantity || 0
       %td= number_to_currency(order.price || 0)
-

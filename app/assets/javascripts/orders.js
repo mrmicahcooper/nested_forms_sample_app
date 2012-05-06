@@ -1,3 +1,6 @@
+
+//app/assets/javascripts/orders.js
+
 $(function() {
 
   var item = {
@@ -15,4 +18,3 @@ $(function() {
   item.init();
 
 });
-

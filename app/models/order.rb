@@ -1,3 +1,4 @@
+
 #app/models/order.rb
 
 class Order < ActiveRecord::Base
