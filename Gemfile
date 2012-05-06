@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'coderay'
 gem 'decent_exposure'
 gem 'haml-rails'
 gem 'jquery-rails'
@@ -7,9 +8,8 @@ gem 'pg'
 gem 'pry'
 gem 'rails', '3.2.2'
 gem 'rdiscount'
-gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'therubyracer'
 gem 'thin'
-gem 'coderay'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -18,6 +18,9 @@ group :assets do
 end
 
 group :development do
-  gem 'therubyracer'
   gem 'heroku'
+end
+
+group :development, :test do
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end
