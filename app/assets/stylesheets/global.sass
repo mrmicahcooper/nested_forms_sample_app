@@ -23,14 +23,39 @@ html
         dl
           dd
             margin-left: 10px
-        ul.items
-          margin: 50px 0 0 0
-          padding: 0
-          li
-            list-style: none
-            display: inline-block
-            label
-              display: block
+            input[type="text"]
+              border: solid 1px #aaa
+              width: 100px
+        div#items
+          fieldset
+            margin: 0
+            padding: 0
+            border: 1px dotted #aaa
+            border-left: none
+            border-right: none
+            div
+              float: left
+              margin: 10px 5px
+              label
+                display: block
+              input[type="text"]
+                border: solid 1px #aaa
+                width: 100px
         div#add_item
           float: right
           margin: 0 0 20px 0
+          margin-top: 10px
+        div#actions
+          margin-top: 10px
+      table.order
+        width: 300px
+        border-spacing: none
+        th, td
+          text-align: right
+          width: 33%
+          padding: 3px 10px
+        tr
+          &:nth-child(even)
+            background: #ddd
+
+

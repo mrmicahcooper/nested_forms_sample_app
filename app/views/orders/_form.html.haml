@@ -10,16 +10,16 @@
     %dt= form.label :ordered_at
     %dd= form.date_select :ordered_at
 
-  %ul.items
-    - #nested fields start here
+  #items
     = form.fields_for :items, items do |item|
-      = render partial: 'item_fields', locals: { item: item }
+      %fieldset
+        = render partial: 'item_fields', locals: { item: item }
 
   %div#add_item
     = link_to 'Add item', '#', id: 'add_item'
 
   %div#actions
     = form.submit
+    = link_to "Back to Orders", orders_path
 
 = render partial: 'item_fields_selleck_template'
-

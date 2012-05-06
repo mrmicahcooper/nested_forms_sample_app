@@ -1,6 +1,9 @@
 %h1 Orders
 = link_to "New order", new_order_path
 %ul
-  - orders.each do |order|
+  - orders.each do |order| #iterater through all the orders
     %li
-      = link_to order_label(order), edit_order_path(order)
+      = link_to order_label(order), order_path(order)
+      |
+      = link_to 'edit', edit_order_path(order)
+

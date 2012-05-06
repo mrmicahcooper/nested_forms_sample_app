@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
 
   def save_and_show(view)
     if order.save # if order is valid
-      redirect_to orders_path # go back to the index page
+      redirect_to order_path(order) # go to the order's show page
     else # if order if invalid
       render view
     end

@@ -1,0 +1,14 @@
+%h1= order_label(order)
+= link_to "Back to Orders", orders_path
+|
+= link_to "Edit", edit_order_path(order)
+%table.order
+  %tr
+    - %w(Product Quantity Price).each do |header|
+      %th= header
+  - items.each do |order|
+    %tr
+      %td= order.product
+      %td= order.quantity
+      %td= number_to_currency(order.price)
+
