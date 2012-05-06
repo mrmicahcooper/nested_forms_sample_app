@@ -1,4 +1,6 @@
--#main form
+
+-#app/views/orders/_form.html.haml
+
 = form_for order do |form|
   %dl.order
     %dt= form.label :vendor
@@ -10,7 +12,7 @@
     %dt= form.label :ordered_at
     %dd= form.date_select :ordered_at
 
-  #items
+  %div#items
     = form.fields_for :items, items do |item|
       %fieldset
         = render partial: 'item_fields', locals: { item: item }
@@ -22,4 +24,7 @@
     = form.submit
     = link_to "Back to Orders", orders_path
 
+
+
+-# Template for adding new items.
 = render partial: 'item_fields_selleck_template'

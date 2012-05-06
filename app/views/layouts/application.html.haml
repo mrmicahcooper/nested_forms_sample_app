@@ -7,3 +7,21 @@
   %body
     %section
       = yield
+    %div#code
+      %h3 The Code
+      %nav
+        = link_to 'current', '#'
+        |
+        = link_to 'controller', '#'
+        |
+        = link_to 'model', '#'
+        |
+        = link_to 'javascript', '#'
+        |
+        = link_to 'all', '#'
+      .current= show_code(show_files)
+      .controller= show_code([Rails.root + "app/controllers/#{controller_name}_controller.rb"])
+      .model= show_code([Rails.root + "app/models/#{controller_name.singularize}.rb"])
+      .javascript= show_code([Rails.root + "app/assets/javascripts/#{controller_name}.js"], 'javascript')
+      .javascript= show_code([Rails.root + "app/views/orders/_item_fields_selleck_template.html.haml"])
+

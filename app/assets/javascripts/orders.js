@@ -2,8 +2,8 @@ $(function() {
 
   var item = {
     addItem: function() {
-      var item_template = { timestamp : $.now() }
-      $('#items').append(selleck($("script#item").html(), item_template));
+      var template = { timestamp : $.now() }
+      $('#items').append(selleck($("script#item").html(), template));
     },
 
     init: function() {
@@ -15,3 +15,4 @@ $(function() {
   item.init();
 
 });
+

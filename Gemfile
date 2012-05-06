@@ -6,8 +6,10 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'pry'
 gem 'rails', '3.2.2'
+gem 'rdiscount'
 gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'thin'
+gem 'coderay'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -17,4 +19,5 @@ end
 
 group :development do
   gem 'therubyracer'
+  gem 'heroku'
 end

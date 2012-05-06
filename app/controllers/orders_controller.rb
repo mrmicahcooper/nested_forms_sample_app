@@ -1,22 +1,18 @@
+#app/controllers/orders_controller.rb
+
 class OrdersController < ApplicationController
 
+  #using the decent_exposure gem
   expose(:orders) { Order.all }
-  expose(:order) #Order.find(id) or Order.new
-  expose(:order_items) { order.items } #array of Item objects
+  expose(:order)
+  expose(:order_items) { order.items }
   expose(:items) do
-    if order_items.present? # if order_items has Item objects (not a new order)
-      order_items # Use those items
-    else # otherwise
-      order_items.build # make a new item object and associate it with the order
+    if order_items.present?
+      order_items
+    else
+      order_items.build
     end
   end
-
-  #controller actions
-
-  #NOTE: If an action is not defined, rails will
-  # try to render a view that matches the
-  # action_name and is in the controller directory
-  # (e.g. order#new will render app/views/orders/new.html.haml)
 
   def create
     save_and_show('new')
@@ -29,9 +25,9 @@ class OrdersController < ApplicationController
   private
 
   def save_and_show(view)
-    if order.save # if order is valid
-      redirect_to order_path(order) # go to the order's show page
-    else # if order if invalid
+    if order.save
+      redirect_to order_path(order)
+    else
       render view
     end
   end

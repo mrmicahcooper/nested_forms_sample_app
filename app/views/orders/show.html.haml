@@ -1,3 +1,5 @@
+-#app/views/orders/show.html.haml
+
 %h1= order_label(order)
 = link_to "Back to Orders", orders_path
 |
@@ -8,7 +10,7 @@
       %th= header
   - items.each do |order|
     %tr
-      %td= order.product
-      %td= order.quantity
-      %td= number_to_currency(order.price)
+      %td= order.product || 0
+      %td= order.quantity || 0
+      %td= number_to_currency(order.price || 0)
 

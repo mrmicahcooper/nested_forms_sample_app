@@ -6,14 +6,22 @@ html
   body
     padding: 0
     margin: 0
-    height: 100%
+    div#code
+      position: absolute
+      left: 525px
+      top: 0px
+      nav
+        font-family: monospace
+      & > div
+        background: #eee
+        display: none
+        padding: 0 1em
+      & > div.current
+        display: block
     section
-      height: 100%
-      width: 600px
-      margin: 0 auto
+      width: 500px
       padding: 10px
-      border-right: solid 1px #aaa
-      border-left: solid 1px #aaa
+      border: solid 1px #aaa
       h1
         margin-top: 0
       ul
@@ -25,7 +33,7 @@ html
             margin-left: 10px
             input[type="text"]
               border: solid 1px #aaa
-              width: 100px
+              width: 300px
         div#items
           fieldset
             margin: 0
@@ -48,7 +56,7 @@ html
         div#actions
           margin-top: 10px
       table.order
-        width: 300px
+        width: 500px
         border-spacing: none
         th, td
           text-align: right
@@ -57,5 +65,3 @@ html
         tr
           &:nth-child(even)
             background: #ddd
-
-
