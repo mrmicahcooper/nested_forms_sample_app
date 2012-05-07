@@ -1,5 +1,7 @@
 
-module OrderHelper
+#app/helpers/orders_helper.rb
+
+module OrdersHelper
 
   def order_label(order)
     "".tap do |order_string|

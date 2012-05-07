@@ -10,7 +10,7 @@
     %div#code
       %h3 The Code
       %nav
-        = link_to 'current', '#'
+        = link_to 'view', '#'
         |
         = link_to 'controller', '#'
         |
@@ -21,9 +21,10 @@
         = link_to 'javascript', '#'
         |
         = link_to 'all', '#'
-      .current= show_code(show_files)
+
+      .view= show_code(show_files)
       .controller= show_code([Rails.root + "app/controllers/#{controller_name}_controller.rb"])
-      .helper= show_code([Rails.root + "app/helpers/#{controller_name.singularize}_helper.rb"])
+      .helper= show_code([Rails.root + "app/helpers/#{controller_name}_helper.rb"])
       .model= show_code([Rails.root + "app/models/#{controller_name.singularize}.rb", Rails.root + 'app/models/item.rb'])
       .javascript= show_code([Rails.root + "app/assets/javascripts/#{controller_name}.js"], 'javascript')
       .javascript= show_code([Rails.root + "app/views/orders/_item_fields_selleck_template.html.haml"])

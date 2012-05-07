@@ -1,7 +1,7 @@
 
 -#app/views/orders/_form.html.haml
 
-= form_for order do |form|
+= form_for order, html: { id: 'order' } do |form|
   %fieldset
     %dl.order
       %dt= form.label :vendor

@@ -4,11 +4,14 @@
 $(function() {
 
   var item = {
-    $el: $("form#new_order"),
+
+    $el: $("form#order"),
+
     addItem: function(e) {
       e.preventDefault();
       var template = { timestamp : $.now() }
-      item.$el.find('#items').append(selleck($("script#item").html(), template));
+      var selleck_template = selleck($("script#item").html(), template);
+      item.$el.find('#items').append(selleck_template);
     },
 
     deleteItem: function(e) {
@@ -24,7 +27,7 @@ $(function() {
     },
 
     init: function() {
-      item.$el.on("click.addItem", "a#add_item", item.addItem);
+      $('a#add_item').click(item.addItem);
       item.$el.on("click.deleteItem", "a.delete", item.deleteItem);
     }
   };

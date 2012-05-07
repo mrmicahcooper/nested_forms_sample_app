@@ -13,11 +13,17 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order.save ? redirect_to(order_path(order)) : render('new')
+    persist_or('new')
   end
 
   def update
-    order.save ? redirect_to(order_path(order)) : render('edit')
+    persist_or('edit')
+  end
+
+  private
+
+  def persist_or(view)
+    order.save ? redirect_to(order_path(order)) : render(view)
   end
 
 end
