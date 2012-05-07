@@ -15,3 +15,6 @@
     %div
       %label(for="order_items_attributes_{{timestamp}}_price") Price
       %input(id="order_items_attributes_{{timestamp}}_price" name="order[items_attributes][{{timestamp}}][price]" type="text")
+
+    %div.delete
+      = link_to 'delete','#'

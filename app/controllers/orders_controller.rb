@@ -3,35 +3,21 @@
 
 class OrdersController < ApplicationController
 
-  #using the decent_exposure gem
+  #using decent_exposure
   expose(:orders) { Order.all }
   expose(:order)
-  expose(:order_items) { order.items }
-  expose(:items) do
-    if order_items.present?
-      order_items
-    else
-      order_items.build
-    end
+  expose(:items) { order.items }
+
+  def new
+    3.times { items.build }
   end
 
   def create
-    save_and_show('new')
+    order.save ? redirect_to(order_path(order)) : render('new')
   end
 
   def update
-    save_and_show('edit')
+    order.save ? redirect_to(order_path(order)) : render('edit')
   end
-
-  private
-
-  def save_and_show(view)
-    if order.save
-      redirect_to order_path(order)
-    else
-      render view
-    end
-  end
-  hide_action :save_and_show
 
 end
