@@ -2,19 +2,24 @@
 - #app/views/orders_item_fields_selleck_template.html.haml
 
 %script#item(type='text/selleck_template')
-  %fieldset
-    %div
-      %label(for="order_items_attributes_{{timestamp}}_product") Product
-      %select(id="order_items_attributes_{{timestamp}}_product" name="order[items_attributes][{{timestamp}}][product]")
-        - PRODUCT.each do |product|
-          %option= product
-    %div
-      %label(for="order_items_attributes_{{timestamp}}_quantity") Quantity
-      %input(id="order_items_attributes_{{timestamp}}_quantity" name="order[items_attributes][{{timestamp}}][quantity]" type="text")
+  %li
+    %dl
+      %dt
+        %label(for="order_items_attributes_{{timestamp}}_product") Product
+      %dd
+        %select(id="order_items_attributes_{{timestamp}}_product" name="order[items_attributes][{{timestamp}}][product]")
+          - PRODUCT.each do |product|
+            %option(value="#{product}")= product
+    %dl
+      %dt
+        %label(for="order_items_attributes_{{timestamp}}_quantity") Quantity
+      %dd
+        %input(id="order_items_attributes_{{timestamp}}_quantity" name="order[items_attributes][{{timestamp}}][quantity]" type="text")
 
-    %div
-      %label(for="order_items_attributes_{{timestamp}}_price") Price
-      %input(id="order_items_attributes_{{timestamp}}_price" name="order[items_attributes][{{timestamp}}][price]" type="text")
+    %dl
+      %dt
+        %label(for="order_items_attributes_{{timestamp}}_price") Price
+      %dd
+        %input(id="order_items_attributes_{{timestamp}}_price" name="order[items_attributes][{{timestamp}}][price]" type="text")
 
-    %div.delete
-      = link_to 'delete','#'
+    = link_to 'delete', '#', class: 'delete'

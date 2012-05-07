@@ -1,15 +1,14 @@
 
 -#app/views/orders/_item_fields.html.haml
-
-= item.hidden_field :_destroy, class: 'destroy'
-%div
-  = item.label :product
-  = item.select :product, PRODUCT
-%div
-  = item.label :quantity
-  = item.text_field :quantity
-%div
-  = item.label :price
-  = item.text_field :price
-%div.delete
-  = link_to 'delete','#'
+%li
+  = item.hidden_field :_destroy, class: 'destroy'
+  %dl
+    %dt= item.label :product
+    %dd= item.select :product, PRODUCT
+  %dl
+    %dt= item.label :quantity
+    %dd= item.text_field :quantity
+  %dl
+    %dt= item.label :price
+    %dd= item.text_field :price
+  = link_to 'delete', '#', class: 'delete'

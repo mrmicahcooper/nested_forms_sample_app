@@ -2,25 +2,23 @@
 -#app/views/orders/_form.html.haml
 
 = form_for order do |form|
-  %dl.order
-    %dt= form.label :vendor
-    %dd= form.select :vendor, VENDOR
+  %fieldset
+    %dl.order
+      %dt= form.label :vendor
+      %dd= form.select :vendor, VENDOR
 
-    %dt= form.label :reference
-    %dd= form.text_field :reference
+      %dt= form.label :reference
+      %dd= form.text_field :reference
 
-    %dt= form.label :ordered_at
-    %dd= form.date_select :ordered_at
+      %dt= form.label :ordered_at
+      %dd= form.date_select :ordered_at
 
-  %div#items
-    = form.fields_for :items, items do |item|
-      %fieldset
+    %ul#items
+      = form.fields_for :items, items do |item|
         = render partial: 'item_fields', locals: { item: item }
 
-  %div#add_item
+  %fieldset.actions
     = link_to 'Add item', '#', id: 'add_item'
-
-  %div#actions
     = form.submit
     = link_to "Back to Orders", orders_path
 

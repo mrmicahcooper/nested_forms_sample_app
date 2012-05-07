@@ -28,35 +28,49 @@ html
         li
           margin: 10px 0
       form
+        fieldset
+          padding: 0
+          margin: 0
+          border: none
         dl
           dd
             margin-left: 10px
             input[type="text"]
               border: solid 1px #aaa
               width: 300px
-        div#items
-          fieldset
+        ul#items
+          padding: 0
+          margin: 0
+          li
+            overflow: hidden
+            padding: 10px 5px
             margin: 0
-            padding: 0
+            list-style: none
             border: 1px dotted #aaa
-            border-left: none
-            border-right: none
-            div
+            border-width: 1px 0
+            + li
+              border-top: none
+            dl
               float: left
-              margin: 10px 5px
-              label
-                display: block
+              padding: 0
+              margin: 0 10px 0 0
+              dt
+                padding: 0 0 3px 0
+                margin: 0
+              dd
+                padding: 0
+                margin: 0
               input[type="text"]
-                border: solid 1px #aaa
                 width: 100px
-            div.delete
+                border: 1px solid #aaa
+            a.delete
               float: right
-        div#add_item
-          float: right
-          margin: 0 0 20px 0
+              margin: 30px 0 0 0
+        fieldset.actions
           margin-top: 10px
-        div#actions
-          margin-top: 10px
+          a#add_item
+            float: right
+            margin: 0 0 20px 0
       table.order
         width: 500px
         border-spacing: none

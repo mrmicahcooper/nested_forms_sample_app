@@ -4,25 +4,28 @@
 $(function() {
 
   var item = {
-    addItem: function() {
+    $el: $("form#new_order"),
+    addItem: function(e) {
+      e.preventDefault();
       var template = { timestamp : $.now() }
-      $('#items').append(selleck($("script#item").html(), template));
+      item.$el.find('#items').append(selleck($("script#item").html(), template));
     },
 
-    deleteItem: function(){
-      var parent = $(this).closest('fieldset');
+    deleteItem: function(e) {
+      e.preventDefault();
+      var $parent = $(this).closest('li');
 
-      if (!parent.find('input.destroy').val()){
-        parent.remove();
-      }else{
-        parent.css('display','none');
-        parent.find('input.destroy').val('true');
+      if (!$parent.find('input.destroy').val()) {
+        $parent.remove();
+      }
+      else {
+        $parent.hide().find('input.destroy').val('true');
       }
     },
 
     init: function() {
-      $('a#add_item').click(item.addItem);
-      $('body > section').delegate('div.delete a', 'click', item.deleteItem);
+      item.$el.on("click.addItem", "a#add_item", item.addItem);
+      item.$el.on("click.deleteItem", "a.delete", item.deleteItem);
     }
   };
 
