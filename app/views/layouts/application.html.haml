@@ -5,6 +5,8 @@
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
   %body
+    %nav.github_link
+      = link_to 'Clone this project', 'http://github.com/mrmicahcooper/nested_forms_sample_app'
     %section
       = yield
     %div#code
