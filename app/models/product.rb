@@ -1,3 +1,6 @@
+
+#app/models/product.rb
+
 PRODUCT = [
   "Buns",
   "Rolls",
