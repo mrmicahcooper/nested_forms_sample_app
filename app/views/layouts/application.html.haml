@@ -18,6 +18,8 @@
         |
         = link_to 'model', '#'
         |
+        = link_to 'schema', '#'
+        |
         = link_to 'helper', '#'
         |
         = link_to 'javascript', '#'
@@ -28,6 +30,7 @@
       .controller= show_code([Rails.root + "app/controllers/#{controller_name}_controller.rb"])
       .helper= show_code([Rails.root + "app/helpers/#{controller_name}_helper.rb"])
       .model= show_code([Rails.root + "app/models/#{controller_name.singularize}.rb", Rails.root + 'app/models/item.rb', "app/models/vendor.rb", "app/models/product.rb"])
+      .schema= show_code([Rails.root + "db/schema.rb"])
       .javascript= show_code([Rails.root + "app/assets/javascripts/#{controller_name}.js"], 'javascript')
       .javascript= show_code([Rails.root + "app/views/orders/_item_fields_selleck_template.html.haml"])
 
