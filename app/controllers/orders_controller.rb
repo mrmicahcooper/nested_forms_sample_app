@@ -1,6 +1,3 @@
-
-#app/controllers/orders_controller.rb
-
 class OrdersController < ApplicationController
 
   #using decent_exposure
