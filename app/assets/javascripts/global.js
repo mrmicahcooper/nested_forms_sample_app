@@ -1,11 +1,11 @@
 $(function(){
-  $('div#code nav a').click(function(){
+  $('section#code_viewer nav a').click(function(){
     var link = $(this), link_text = link.html();
     if (link_text == 'all'){
-      $('div#code div').css('display','block')
+      $('section#code_viewer div').css('display','block')
     }
     else{
-      $('div#code > div').css('display','none');
+      $('section#code_viewer > div').css('display','none');
       $('div.'+ link_text).css('display','block');
     }
   })
