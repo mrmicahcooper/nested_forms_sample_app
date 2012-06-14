@@ -1,6 +1,3 @@
-
-//app/assets/javascripts/orders.js
-
 $(function() {
 
   var item = {

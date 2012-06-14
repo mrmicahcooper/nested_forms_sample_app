@@ -1,6 +1,3 @@
-
-#app/models/item.rb
-
 class Item < ActiveRecord::Base
 
   belongs_to :order

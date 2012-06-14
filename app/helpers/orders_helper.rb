@@ -1,6 +1,3 @@
-
-#app/helpers/orders_helper.rb
-
 module OrdersHelper
 
   def order_label(order)
