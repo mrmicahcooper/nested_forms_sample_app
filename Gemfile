@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'coderay'
 gem 'decent_exposure'
 gem 'haml-rails'
+gem 'foshow', path: '../foshow'
 gem 'jquery-rails'
 gem 'pg'
 gem 'pry'
@@ -19,9 +20,10 @@ end
 
 group :development do
   gem 'heroku'
-  gem 'pry'
 end
 
 group :development, :test do
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'pry'
 end
